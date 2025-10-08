@@ -1,183 +1,247 @@
 ﻿<!DOCTYPE html>
 <html lang="pt">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfólio</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox@3.2.0/dist/css/glightbox.min.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Portfólio</title>
 
-    
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox@3.2.0/dist/css/glightbox.min.css"/>
 
+  <style>
+    /* Mini estilos para submenu e grelha (podes levar para o teu style.css) */
+    header nav ul { list-style:none; display:flex; gap:16px; align-items:center; }
+    header nav ul li { position:relative; }
+    header nav ul li a { text-decoration:none; }
+    .has-sub > a::after { content:"▾"; margin-left:.35rem; font-size:.85em; }
+    .submenu { position:absolute; left:0; top:100%; background:#fff; border:1px solid #eee; border-radius:10px; padding:.5rem; display:none; min-width:220px; z-index:10; }
+    .submenu li { padding:.25rem 0; }
+    .has-sub:hover .submenu { display:block; }
+
+    .container { max-width:1200px; margin:0 auto; padding:0 1rem; }
+    h2.section-title { margin:2.5rem 0 1rem; border-bottom:2px solid #003366; padding-bottom:.35rem; color:#003366; }
+    .gallery, .grid { display:grid; gap:1rem; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); }
+    .item, .card { background:#fff; border:1px solid #eee; border-radius:12px; padding:12px; }
+    .item img, .item video, .item iframe,
+    .card img, .card video, .card iframe { width:100%; display:block; border-radius:10px; }
+    .item p, .card h3 { margin:.6rem 0 0; }
+    /* Ajuste de áudios em grelha */
+    .audio-grid { display:grid; gap:1rem; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); margin-top:.5rem; }
+    .audio-grid > div { background:#fff; border:1px solid #eee; border-radius:12px; padding:12px; }
+  </style>
 </head>
-<body>
 
+<body>
 <header>
-    <div class="header-container">
-        <a href="index.html" class="logo">
-            <img src="assets/imagem/simbolo.png" alt="Feelaminio Logo">
-        </a>
-        <nav>
-            <ul>
-                <li><a href="index.html">Início</a></li>
-                <li><a href="about.html">Sobre Mim</a></li>
-                <li><a href="portfolio.html" class="active">Portfólio</a></li>
-                <li><a href="contact.html">Contacto</a></li>
-            </ul>
-        </nav>
-    </div>
+  <div class="header-container container">
+    <a href="index.html" class="logo">
+      <img src="assets/imagem/simbolo.png" alt="Feelaminio Logo">
+    </a>
+
+    <nav>
+      <ul>
+        <li><a href="index.html">Início</a></li>
+        <li><a href="about.html">Sobre Mim</a></li>
+
+        <!-- PORTFÓLIO COM SUBMENU -->
+        <li class="has-sub">
+          <a href="portfolio.html" class="active">Portfólio</a>
+          <ul class="submenu">
+            <li><a href="#ilustracao">Ilustração</a></li>
+            <li><a href="#branding">Branding / Identidade Visual</a></li>
+            <li><a href="#video">Vídeo / Animação</a></li>
+            <li><a href="#modelacao3d">3D / Modelação</a></li>
+            <li><a href="#audio">Áudio</a></li>
+            <li><a href="#webui">Web / UI / Prototipagem</a></li>
+          </ul>
+        </li>
+
+        <li><a href="contact.html">Contacto</a></li>
+      </ul>
+    </nav>
+  </div>
 </header>
 
 <section id="portfolio">
-    <div class="container">
-        <h2>Os Meus Projetos</h2>
-        <div class="gallery">
-            
-            <div class="item" id="designgraficoilustraçao">
-                <a href="https://drive.google.com/file/d/1TDScpl5F-IBc94q_ylGtE5yANysYAxys/view?usp=sharing" target="_blank">
-                    <img src="assets/imagem/capa_DesignGraficoIlustracao.png" alt="Design Gráfico & Ilustração">
-                    <p>Design Gráfico & Ilustração</p>
-                </a>
-            </div>
+  <div class="container">
+    <h2>Os Meus Projetos</h2>
 
-            <div class="item" id="mascote">
-                <a href="assets/videos/mascote_4.mp4" class="glightbox">
-                    <img src="assets/imagem/mascote_animada.png" alt="Mascote">
-                    <p>Mascote Animada</p>
-                </a>
-            </div>
-
-            <div class="item" id="foleys">
-                <a href="assets/videos/Foleys.mp4" class="glightbox">
-                    <img src="assets/imagem/foleys.png" alt="Foleys">
-                    <p>Foleys</p>
-                </a>
-            </div>
-
-             <div class="item" id="sonoplastia1">
-                <a href="assets/videos/sonoplastia1.mp4" class="glightbox">
-                    <img src="assets/imagem/sonoplastia1.png" alt="Sonoplastia 1">
-                    <p>Sonoplastia 1</p>
-                </a>
-            </div>
-
-             <div class="item" id="sonoplastia2">
-                <a href="assets/videos/Sonoplastia2.mp4" class="glightbox">
-                    <img src="assets/imagem/sonoplastia2.png" alt="Sonoplastia 2">
-                    <p>Sonoplastia 2</p>
-                </a>
-            </div>
-
-             <div class="item" id="logotipo_Animado_som">
-                <a href="assets/videos/logotipo_Animado_som.mp4" class="glightbox">
-                    <img src="assets/imagem/Logotipo Final.jpg " alt="Logotipo Animado">
-                    <p>Logotipo Animado</p>
-                </a>
-            </div>
-
-            <div class="item" id="Manual_Normas_Graficas"> 
-                <a href="assets/pdfs/Manual_Normas_Graficas.pdf" target="_blank">
-                    <img src="assets/imagem/Captura_Manual_Normas.png" alt="Manual de Normas Gráficas">
-                    <p>Manual de Normas Gráficas</p>
-                </a>
-            </div>
-
-             <div class="item" id="oraculo">
-                <a href="assets/videos/oraculo.mp4" class="glightbox">
-                    <img src="assets/imagem/oraculo_capa.png" alt="Logotipo Animado 3D">
-                    <p>Oráculo Animado</p>
-                </a>
-            </div>
-
-             <div class="item" id="VideoInstitucionalV2">
-                <a href="assets/videos/VideoInstitucionalV2.mp4" class="glightbox">
-                    <img src="https://drive.google.com/file/d/14KGAMtCCCROhge7GLT-ePeLg7KxJmboD/view?usp=drive_link" alt="Vídeo Institucional">
-                    <p>Vídeo Institucional</p>
-                </a>
-            </div>
-
-            <div class="item" id="logotipo_Animado_ComSommp4">
-                <a href="assets/videos/logotipo_Animado_ComSommp4.mp4" class="glightbox">
-                    <img src="assets/imagem/capa_LogotipoAnimado.png" alt="Logotipo Animado 3D">
-                    <p>Logotipo Animado 3D</p>
-                </a>
-            </div>
-
-            <div class="item" id="batistera5">
-                <a href="assets/imagem/batistera5.jpg" class="glightbox">
-                    <img src="assets/imagem/batistera5.jpg" alt="Betistério">
-                    <p>Betistério Modelação 3D</p>
-                </a>
-            </div>
-            
-            <div class="item" id="lego">
-                <a href="assets/videos/Lego.mp4" class="glightbox">
-                    <img src="assets/imagem/capa_LegoAnimado.png" alt="Lego">
-                    <p>Lego Animado</p>
-                </a>
-            </div>
-
-            <div class="item" id="Kisok_Animado">
-                <a href="assets/videos/Kisok_Animado.mp4" class="glightbox">
-                    <img src="assets/imagem/camera20300.png" alt="Kiosk Modelação 3D Animado">
-                    <p>Kiosk Modelação 3D Animado</p>
-                </a>
-            </div>
-
-             <div class="item" id="kiosk_buildup1">
-                <a href="assets/videos/kiosk_buildup1.mp4" class="glightbox">
-                    <img src="assets/imagem/camera20274.jpg" alt="Kiosk 3D Buildup">
-                    <p>Kiosk 3D Buildup</p>
-                </a>
-            </div>
-
-
-                <div id="jingle-1">
-                    <audio controls>
-                        <source src="assets/musicas/jingle1.mp3" type="audio/mpeg">
-                    </audio>
-                </div>
-
-                <div id="jingle-2">
-                    <audio controls>
-                        <source src="assets/musicas/jingle2.wav" type="audio/mpeg">
-                    </audio>
-                </div>
-
-                <div id="musica-1">
-                    <audio controls>
-                        <source src="assets/musicas/musica_1.mp3" type="audio/mpeg">
-                    </audio>
-                </div>
-
-                <div id="musica-2">
-                    <audio controls>
-                        <source src="assets/musicas/musica_2.mp3" type="audio/mpeg">
-                    </audio>
-                </div>
-
-                <div id="musica-3">
-                    <audio controls>
-                        <source src="assets/musicas/musica_3.mp3" type="audio/mpeg">
-                    </audio>
-                </div>
+    <!-- ===================== ILUSTRAÇÃO ===================== -->
+    <h2 id="ilustracao" class="section-title">🎨 Ilustração</h2>
+    <div class="gallery">
+      <!-- Exemplo: o teu PDF “Design Gráfico & Ilustração” não deve ser <img src> do Drive;
+           deixa a capa e o link para o PDF (Drive preview) ou para página interna com imagens -->
+      <div class="item" id="designgraficoilustracao">
+        <a href="https://drive.google.com/file/d/1TDScpl5F-IBc94q_ylGtE5yANysYAxys/preview" target="_blank" rel="noopener">
+          <img src="assets/imagem/capa_DesignGraficoIlustracao.png" alt="Design Gráfico & Ilustração">
+          <p>Design Gráfico & Ilustração (PDF)</p>
+        </a>
+      </div>
+      <!-- Podes duplicar cards de ilustração aqui… -->
     </div>
+
+    <!-- ============== BRANDING / IDENTIDADE VISUAL ============== -->
+    <h2 id="branding" class="section-title">🟡 Branding / Identidade Visual</h2>
+    <div class="gallery">
+      <!-- Manual de Normas no Drive (preview). Se for muito grande e der erro, troca por link de download:
+           https://drive.google.com/uc?export=download&id=SEU_ID_DO_PDF -->
+      <div class="item" id="Manual_Normas_Graficas">
+        <a href="https://drive.google.com/file/d/SEU_ID_DO_PDF/preview" target="_blank" rel="noopener">
+          <img src="assets/imagem/Captura_Manual_Normas.png" alt="Manual de Normas Gráficas">
+          <p>Manual de Normas Gráficas</p>
+        </a>
+      </div>
+    </div>
+
+    <!-- =================== VÍDEO / ANIMAÇÃO =================== -->
+    <h2 id="video" class="section-title">🔴 Vídeo / Animação</h2>
+    <div class="gallery">
+      <div class="item" id="mascote">
+        <a href="assets/videos/mascote_4.mp4" class="glightbox" data-type="video">
+          <img src="assets/imagem/mascote_animada.png" alt="Mascote">
+          <p>Mascote Animada</p>
+        </a>
+      </div>
+
+      <div class="item" id="foleys">
+        <a href="assets/videos/foleys.mp4" class="glightbox" data-type="video">
+          <img src="assets/imagem/foleys.png" alt="Foleys">
+          <p>Foleys</p>
+        </a>
+      </div>
+
+      <!-- sonoplastia1 é grande: hospeda no Drive (preview em iframe numa página interna ou abre em nova aba).
+           Aqui deixo abrir o vídeo local apenas se < 25 MB; caso contrário, troca por link Drive -->
+      <div class="item" id="sonoplastia1">
+        <!-- Se o local for grande, substitui por:
+        <a href="https://drive.google.com/file/d/SEU_ID_SONOPLASTIA1/preview" target="_blank" rel="noopener">… -->
+        <a href="assets/videos/sonoplastia2.mp4" class="glightbox" data-type="video">
+          <img src="assets/imagem/sonoplastia1.png" alt="Sonoplastia">
+          <p>Sonoplastia</p>
+        </a>
+      </div>
+
+      <div class="item" id="logotipo_Animado_som">
+        <a href="assets/videos/logotipo_Animado_som.mp4" class="glightbox" data-type="video">
+          <img src="assets/imagem/Logotipo Final.jpg" alt="Logotipo Animado">
+          <p>Logotipo Animado</p>
+        </a>
+      </div>
+
+      <!-- Vídeo Institucional: Drive PREVIEW em iframe; não uses Drive no src de <img> -->
+      <div class="item" id="VideoInstitucionalV2">
+        <a href="https://drive.google.com/file/d/SEU_ID_DO_VIDEO_INSTITUCIONAL/preview" target="_blank" rel="noopener">
+          <img src="assets/imagem/capa_VideoInstitucional.png" alt="Vídeo Institucional">
+          <p>Vídeo Institucional (ver)</p>
+        </a>
+      </div>
+
+      <div class="item" id="logotipo_Animado_ComSom">
+        <a href="assets/videos/logotipo_Animado_ComSom.mp4" class="glightbox" data-type="video">
+          <img src="assets/imagem/capa_LogotipoAnimado.png" alt="Logotipo Animado 3D">
+          <p>Logotipo Animado 3D</p>
+        </a>
+      </div>
+
+      <div class="item" id="lego">
+        <a href="assets/videos/lego.mp4" class="glightbox" data-type="video">
+          <img src="assets/imagem/capa_LegoAnimado.png" alt="Lego">
+          <p>Lego Animado</p>
+        </a>
+      </div>
+    </div>
+
+    <!-- =================== 3D / MODELACAO =================== -->
+    <h2 id="modelacao3d" class="section-title">🟢 3D / Modelação</h2>
+    <div class="gallery">
+      <div class="item" id="kiosk_animado">
+        <a href="assets/videos/kiosk_Animado.mp4" class="glightbox" data-type="video">
+          <img src="assets/imagem/camera20300.png" alt="Kiosk Modelação 3D Animado">
+          <p>Kiosk Modelação 3D Animado</p>
+        </a>
+      </div>
+
+      <div class="item" id="kiosk_buildup1">
+        <a href="assets/videos/kiosk_buildup1.mp4" class="glightbox" data-type="video">
+          <img src="assets/imagem/camera20274.jpg" alt="Kiosk 3D Buildup">
+          <p>Kiosk 3D Buildup</p>
+        </a>
+      </div>
+
+      <div class="item" id="batistera5">
+        <a href="assets/imagem/batistera5.jpg" class="glightbox">
+          <img src="assets/imagem/batistera5.jpg" alt="Betistério">
+          <p>Betistério Modelação 3D</p>
+        </a>
+      </div>
+
+      <div class="item" id="oraculo">
+        <a href="assets/videos/oraculo.mp4" class="glightbox" data-type="video">
+          <img src="assets/imagem/oraculo_capa.png" alt="Oráculo">
+          <p>Oráculo Animado</p>
+        </a>
+      </div>
+    </div>
+
+    <!-- =================== ÁUDIO =================== -->
+    <h2 id="audio" class="section-title">🎧 Áudio</h2>
+    <div class="audio-grid">
+      <div id="jingle-1">
+        <p>Jingle 1</p>
+        <audio controls>
+          <source src="assets/musicas/jingle1.mp3" type="audio/mpeg">
+        </audio>
+      </div>
+      <div id="jingle-2">
+        <p>Jingle 2</p>
+        <audio controls>
+          <source src="assets/musicas/jingle2.wav" type="audio/wav">
+        </audio>
+      </div>
+      <div id="musica-1">
+        <p>Música 1</p>
+        <audio controls>
+          <source src="assets/musicas/musica_1.mp3" type="audio/mpeg">
+        </audio>
+      </div>
+      <div id="musica-2">
+        <p>Música 2</p>
+        <audio controls>
+          <source src="assets/musicas/musica_2.mp3" type="audio/mpeg">
+        </audio>
+      </div>
+      <div id="musica-3">
+        <p>Música 3</p>
+        <audio controls>
+          <source src="assets/musicas/musica_3.mp3" type="audio/mpeg">
+        </audio>
+      </div>
+    </div>
+
+    <!-- =================== WEB / UI =================== -->
+    <h2 id="webui" class="section-title">🔵 Web / UI / Prototipagem</h2>
+    <div class="gallery">
+      <!-- Exemplo placeholder: substitui por UI reais ou protótipos Figma -->
+      <div class="item">
+        <a href="https://www.figma.com/proto/SEU_LINK" target="_blank" rel="noopener">
+          <img src="assets/imagem/ui-placeholder.jpg" alt="UI / Prototipagem">
+          <p>Protótipo UI (Figma)</p>
+        </a>
+      </div>
+    </div>
+
+  </div>
 </section>
 
 <footer>
-    <div class="container">
-        <p>&copy; 2024 Dora Miranda. Todos os direitos reservados.</p>
-    </div>
+  <div class="container">
+    <p>&copy; 2024 Dora Miranda. Todos os direitos reservados.</p>
+  </div>
 </footer>
 
 <script src="https://cdn.jsdelivr.net/gh/mcstudios/glightbox/dist/js/glightbox.min.js"></script>
-    <script>
-        // Este é o código de inicialização do Glightbox
-        const lightbox = GLightbox({
-            selector: '.glightbox'
-        });
-    </script>
-
-
+<script>
+  const lightbox = GLightbox({ selector: '.glightbox' });
+</script>
 </body>
 </html>
