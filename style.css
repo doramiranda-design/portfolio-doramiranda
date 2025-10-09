@@ -533,3 +533,15 @@ footer {
     color: #fff;
     margin-left: 4px;
 }
+
+/* Remove outline/box-shadow indesejado em itens do submenu focados */
+.submenu li a:focus {
+    outline: none !important; /* Remove o contorno padrão do navegador */
+    box-shadow: none !important; /* Garante que nenhuma sombra externa apareça */
+}
+
+/* Opcional: Se a linha for uma borda */
+.submenu li a:focus,
+.submenu li a:hover {
+    border: none !important; /* Remove qualquer borda que possa estar a ser aplicada */
+}
