@@ -58,10 +58,13 @@ header {
 .header-container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 10px 20px;
+    /* REMOVA O PADDING VERTICAL (10px). Mantenha só o horizontal (20px) */
+    padding: 0 20px; 
+
     display: flex;
-    align-items: center;
+    align-items: center; /* Garante que o logo e o nav estão centrados verticalmente */
     justify-content: space-between;
+    height: 70px; /* ALTURA FIXA é a chave */
 }
 
 .logo img {
