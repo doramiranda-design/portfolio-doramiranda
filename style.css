@@ -449,67 +449,87 @@ footer {
     clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
 }
 
-.has-sub { position: relative; }
+/*
+ * ESTILOS DO SUBMENU (DROPDOWN)
+ */
 
-/* Caixa do submenu */
-.submenu {
-  position: absolute;
-  left: 0;
-  top: 100%;
-  background: var(--primary-color);           /* azul escuro */
-  border-radius: 10px;
-  padding: .5rem 0;
-  min-width: 220px;
-  box-shadow: 0 6px 18px rgba(0,0,0,.18);
-  display: none;
-  z-index: 1001;                               /* acima do cabeçalho */
-  border: 1px solid rgba(255,255,255,.08);
+/* Contêiner principal do item de menu com submenu */
+.has-sub {
+    position: relative; 
 }
 
-/* Mostrar submenu no hover e por teclado (acessível) */
+/* Caixa do submenu (o dropdown propriamente dito) */
+.submenu {
+    position: absolute;
+    left: 0;
+    top: 100%; /* Posição imediatamente abaixo do item 'Portfólio' */
+    
+    /* Cores e Aparência Limpa */
+    background: var(--light-background); /* Fundo branco/claro */
+    border-radius: 8px; /* Borda um pouco mais suave */
+    padding: .5rem 0;
+    min-width: 200px; /* Largura mínima definida */
+    
+    /* Sombra e Borda */
+    box-shadow: 0 4px 12px rgba(0,0,0,.15); /* Sombra profissional */
+    border: 1px solid rgba(0,0,0,.05); /* Borda muito leve e suave */
+    
+    /* Esconder por padrão */
+    display: none;
+    z-index: 1001; 
+}
+
+/* Linha superior dourada para conectar com a marca */
+.submenu::before {
+    content: "";
+    position: absolute;
+    left: 0; top: 0;
+    width: 100%; 
+    height: 3px; /* Altura da linha de destaque */
+    background: var(--secondary-color); /* Dourado */
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+/* Mostrar submenu ao passar o mouse ou focar (acessibilidade) */
 .has-sub:hover .submenu,
 .has-sub:focus-within .submenu {
-  display: block;
+    display: block;
 }
 
 /* Itens do submenu */
-.submenu li { list-style: none; }
-
-/* Links do submenu: branco por defeito */
-.submenu li a {
-  display: block;
-  padding: 10px 16px;
-  color: #fff;                                  /* texto branco */
-  text-decoration: none;
-  font-weight: 600;
-  letter-spacing: .2px;
-  transition: background .25s ease, color .25s ease, padding-left .25s ease;
-  outline: none;
+.submenu li { 
+    list-style: none; /* Remove marcadores */
+    margin: 0; /* Remove margem extra da lista principal */
+    padding: 0;
 }
 
-/* Hover/focus: fundo azul + claro e texto dourado */
+/* Links do submenu: Texto escuro no fundo claro */
+.submenu li a {
+    display: block;
+    padding: 10px 16px;
+    color: var(--text-color); /* Texto escuro */
+    text-decoration: none;
+    font-weight: 600;
+    letter-spacing: .2px;
+    /* Animações */
+    transition: background .25s ease, color .25s ease, padding-left .25s ease;
+    outline: none;
+    text-transform: uppercase; /* Para manter a consistência */
+}
+
+/* Hover/focus: Fundo azul escuro e texto dourado */
 .submenu li a:hover,
 .submenu li a:focus {
-  background: #0a4a82;                          /* variação do azul */
-  color: var(--secondary-color);                /* dourado */
-  padding-left: 22px;                           /* micro-animação */
+    background: var(--primary-color); /* Fundo Azul Escuro */
+    color: var(--secondary-color); /* Texto Dourado */
+    padding-left: 22px; 
 }
 
-/* Indicador ▼ no item "Portfólio" */
+/* Indicador ▼ no item 'Portfólio' */
 .has-sub > a::after {
-  content: " ▾";
-  font-size: .85em;
-  color: #fff;                                  /* mantém branco no header azul */
-  margin-left: 4px;
-}
-
-/* (Opcional) borda superior dourada para destacar o submenu */
-.submenu::before {
-  content: "";
-  position: absolute;
-  left: 0; top: 0;
-  width: 100%; height: 3px;
-  background: var(--secondary-color);           /* dourado */
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
+    content: " ▾";
+    font-size: .85em;
+    color: #fff;
+    margin-left: 4px;
 }
