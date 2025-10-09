@@ -462,7 +462,7 @@ footer {
 .submenu {
     position: absolute;
     left: 0;
-    top: calc(100% - 1px); /* Sobe exatamente 1 pixel */
+    top: 95%; /* Posição imediatamente abaixo do item 'Portfólio' */
     
     /* Cores e Aparência Limpa */
     background: var(--light-background); /* Fundo branco/claro */
